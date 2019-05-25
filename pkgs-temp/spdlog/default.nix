@@ -20,6 +20,10 @@ let
 
       outputs = [ "out" "doc" ];
 
+      patches = [
+        ./0001-disable-cpuinfo.patch
+      ];
+
       postInstall = ''
         mkdir -p $out/share/doc/spdlog
         cp -rv ../example $out/share/doc/spdlog

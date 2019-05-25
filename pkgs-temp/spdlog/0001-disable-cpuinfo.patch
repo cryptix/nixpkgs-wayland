@@ -1,0 +1,25 @@
+From d288dbd5280c248c7ef4d7be590ecbfb02a095f0 Mon Sep 17 00:00:00 2001
+From: Henry <cryptix@riseup.net>
+Date: Sat, 25 May 2019 20:15:27 +0200
+Subject: [PATCH] disable cpuinfo
+
+---
+ bench/latency.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bench/latency.cpp b/bench/latency.cpp
+index 2a7787d..cbd738d 100644
+--- a/bench/latency.cpp
++++ b/bench/latency.cpp
+@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
+ 
+     size_t file_size = 30 * 1024 * 1024;
+     size_t rotating_files = 5;
+-    int n_threads = benchmark::CPUInfo::Get().num_cpus;
++    int n_threads = 1;
+ 
+     prepare_logdir();
+ 
+-- 
+2.21.0
+
