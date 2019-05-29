@@ -16,13 +16,9 @@ let
       nativeBuildInputs = [ cmake ];
       buildInputs = [ gbenchmark ];
 
-      cmakeFlags = [ "-DSPDLOG_BUILD_EXAMPLES=OFF" ];
+      cmakeFlags = [ "-DSPDLOG_BUILD_EXAMPLES=OFF" "-DSPDLOG_BUILD_BENCH=OFF" ];
 
       outputs = [ "out" "doc" ];
-
-      patches = [
-        ./0001-disable-cpuinfo.patch
-      ];
 
       postInstall = ''
         mkdir -p $out/share/doc/spdlog
